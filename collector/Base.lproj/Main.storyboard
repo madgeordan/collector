@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ST6-yk-iOv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--collector-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="collector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,9 +24,104 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="collector" id="9zM-Xl-nZp">
+                        <barButtonItem key="backBarButtonItem" title="collection" id="DPa-5B-xlH"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qns-ZF-epI">
+                            <connections>
+                                <segue destination="g74-YD-aqg" kind="show" id="Hs5-0G-rms"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
+        </scene>
+        <!--CreateVC-->
+        <scene sceneID="Rve-cv-JMR">
+            <objects>
+                <viewController id="g74-YD-aqg" customClass="CreateVC" customModule="collector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BKe-1A-rVk"/>
+                        <viewControllerLayoutGuide type="bottom" id="ySl-Bx-wdA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8aE-uP-1h5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lake.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="k24-70-uQ6">
+                                <rect key="frame" x="-157.5" y="84" width="690" height="133"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type the name of the thing you're going to add" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gIO-RW-nEU">
+                                <rect key="frame" x="66" y="257" width="243" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H9-cr-uxz">
+                                <rect key="frame" x="172" y="327" width="30" height="30"/>
+                                <state key="normal" title="add"/>
+                                <connections>
+                                    <action selector="addButton:" destination="g74-YD-aqg" eventType="touchUpInside" id="pgg-6d-Qj9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6H9-cr-uxz" firstAttribute="centerX" secondItem="8aE-uP-1h5" secondAttribute="centerX" id="4Xu-er-NIu"/>
+                            <constraint firstItem="ySl-Bx-wdA" firstAttribute="top" secondItem="k24-70-uQ6" secondAttribute="bottom" constant="450" id="Ewl-5U-Qv5"/>
+                            <constraint firstItem="gIO-RW-nEU" firstAttribute="leading" secondItem="8aE-uP-1h5" secondAttribute="leadingMargin" constant="50" id="F8H-oQ-6xp"/>
+                            <constraint firstItem="6H9-cr-uxz" firstAttribute="top" secondItem="gIO-RW-nEU" secondAttribute="bottom" constant="40" id="Ljm-26-VRR"/>
+                            <constraint firstItem="gIO-RW-nEU" firstAttribute="top" secondItem="k24-70-uQ6" secondAttribute="bottom" constant="40" id="QY8-A7-dmm"/>
+                            <constraint firstItem="gIO-RW-nEU" firstAttribute="centerX" secondItem="8aE-uP-1h5" secondAttribute="centerX" id="Zx0-d0-oO1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gIO-RW-nEU" secondAttribute="trailing" constant="50" id="jKt-FL-wmZ"/>
+                            <constraint firstItem="k24-70-uQ6" firstAttribute="centerX" secondItem="8aE-uP-1h5" secondAttribute="centerX" id="kz4-eB-gAR"/>
+                            <constraint firstItem="k24-70-uQ6" firstAttribute="top" secondItem="BKe-1A-rVk" secondAttribute="bottom" constant="20" id="sSh-vm-D5o"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PZK-zT-TjX">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="6fC-3s-Yq2">
+                                <connections>
+                                    <action selector="cameraButton:" destination="g74-YD-aqg" id="zdK-eC-A3e"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="photos" id="mnw-Ni-HZN">
+                                <connections>
+                                    <action selector="photosButton:" destination="g74-YD-aqg" id="Kc8-rj-7H3"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="k24-70-uQ6" id="PCA-I0-jLK"/>
+                        <outlet property="nameField" destination="gIO-RW-nEU" id="JkZ-lG-IwW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I3m-ZE-Mqb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832.8" y="122.78860569715144"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lQ5-Kb-c9O">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ST6-yk-iOv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ktZ-D2-hdV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eLM-Az-dcW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oi8-8c-TX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="-620"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lake.jpg" width="690" height="298"/>
+    </resources>
 </document>
