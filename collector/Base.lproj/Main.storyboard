@@ -22,7 +22,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wqv-N2-Rrn">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wqv-N2-Rrn" secondAttribute="bottom" id="CTH-kc-zce"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wqv-N2-Rrn" secondAttribute="trailing" id="Y7L-CC-XV4"/>
+                            <constraint firstItem="wqv-N2-Rrn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cwh-4k-bWE"/>
+                            <constraint firstItem="wqv-N2-Rrn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="svA-It-Nwx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="collector" id="9zM-Xl-nZp">
                         <barButtonItem key="backBarButtonItem" title="collection" id="DPa-5B-xlH"/>
@@ -32,6 +44,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="wqv-N2-Rrn" id="91P-4x-9hu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

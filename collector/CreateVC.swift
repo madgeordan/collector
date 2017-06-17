@@ -16,7 +16,11 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     
     @IBAction func addButton(_ sender: Any) {
-        print("add")
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let collection = Collection(context: context)
+        collection.name = nameField.text
+        collection.picture = UIImagePNGRepresentation(imageView.image!)! as NSData
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
     @IBOutlet weak var nameField: UITextField!
