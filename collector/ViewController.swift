@@ -25,12 +25,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func viewWillAppear(_ animated: Bool) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let collections = Collection(context: context)
         do {
-            let collections = try context.fetch(Collection.fetchRequest())
+            collections = try context.fetch(Collection.fetchRequest())
             tableView.reloadData()
         } catch {
-            print("error!")
+            
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
