@@ -40,7 +40,7 @@
                         <barButtonItem key="backBarButtonItem" title="collection" id="DPa-5B-xlH"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qns-ZF-epI">
                             <connections>
-                                <segue destination="g74-YD-aqg" kind="show" id="Hs5-0G-rms"/>
+                                <segue destination="g74-YD-aqg" kind="show" identifier="plusSegue" id="Hs5-0G-rms"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -76,7 +76,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H9-cr-uxz">
-                                <rect key="frame" x="173" y="378" width="30" height="30"/>
+                                <rect key="frame" x="156" y="378" width="65" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="add"/>
                                 <connections>
@@ -101,6 +101,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUPDButton" destination="6H9-cr-uxz" id="lkE-WC-jN3"/>
                         <outlet property="imageView" destination="k24-70-uQ6" id="PCA-I0-jLK"/>
                         <outlet property="nameField" destination="gIO-RW-nEU" id="JkZ-lG-IwW"/>
                     </connections>

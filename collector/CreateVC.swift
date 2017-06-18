@@ -14,12 +14,13 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         print("cam")
     }
     
+    @IBOutlet weak var addUPDButton: UIButton!
     
     @IBAction func addButton(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let collection = Collection(context: context)
         collection.name = nameField.text
-        collection.picture = UIImageJPEGRepresentation(imageView.image!, 100)! as NSData
+        collection.picture = UIImagePNGRepresentation(imageView.image!)! as NSData
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }
@@ -31,10 +32,26 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     var imagePicker = UIImagePickerController()
     
+    var collection: Collection? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
+        
+        if collection != nil {
+            
+            if let imageData = collection?.picture as Data? {
+                if let image = UIImage(data: imageData) {
+                    imageView.image = image
+                }
+            }
+            nameField.text = collection?.name
+            addUPDButton.setTitle("rename", for: .normal)
+            addUPDButton.setTitleColor(UIColor.black, for: .normal)
+        } else {
+            print("NO COLLECTION!")
+        }
     }
     @IBAction func photosButton(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary

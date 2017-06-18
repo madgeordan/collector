@@ -15,7 +15,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var collections: [Collection] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +40,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = collection.name
         cell.imageView?.image = UIImage(data: collection.picture! as Data)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let collection = collections[indexPath.row]
+        performSegue(withIdentifier: "plusSegue", sender: collection)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as! CreateVC
+        nextVC.collection = sender as? Collection
     }
 }
 
