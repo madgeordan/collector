@@ -39,7 +39,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = UITableViewCell()
         let collection = collections[indexPath.row]
         cell.textLabel?.text = collection.name
+        cell.imageView?.image = UIImage(data: collection.picture! as Data)
         return cell
     }
 }
+
+
 

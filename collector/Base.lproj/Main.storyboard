@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ST6-yk-iOv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ST6-yk-iOv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -64,17 +64,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lake.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="k24-70-uQ6">
-                                <rect key="frame" x="-157.5" y="84" width="690" height="133"/>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type the name of the thing you're going to add" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gIO-RW-nEU">
-                                <rect key="frame" x="66" y="257" width="243" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type the name of the thing you're going to add" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gIO-RW-nEU">
+                                <rect key="frame" x="65" y="340" width="245.5" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="done"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H9-cr-uxz">
-                                <rect key="frame" x="172" y="327" width="30" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.png" translatesAutoresizingMaskIntoConstraints="NO" id="k24-70-uQ6">
+                                <rect key="frame" x="58" y="72" width="260" height="260"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H9-cr-uxz">
+                                <rect key="frame" x="173" y="378" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="add"/>
                                 <connections>
                                     <action selector="addButton:" destination="g74-YD-aqg" eventType="touchUpInside" id="pgg-6d-Qj9"/>
@@ -82,17 +85,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="6H9-cr-uxz" firstAttribute="centerX" secondItem="8aE-uP-1h5" secondAttribute="centerX" id="4Xu-er-NIu"/>
-                            <constraint firstItem="ySl-Bx-wdA" firstAttribute="top" secondItem="k24-70-uQ6" secondAttribute="bottom" constant="450" id="Ewl-5U-Qv5"/>
-                            <constraint firstItem="gIO-RW-nEU" firstAttribute="leading" secondItem="8aE-uP-1h5" secondAttribute="leadingMargin" constant="50" id="F8H-oQ-6xp"/>
-                            <constraint firstItem="6H9-cr-uxz" firstAttribute="top" secondItem="gIO-RW-nEU" secondAttribute="bottom" constant="40" id="Ljm-26-VRR"/>
-                            <constraint firstItem="gIO-RW-nEU" firstAttribute="top" secondItem="k24-70-uQ6" secondAttribute="bottom" constant="40" id="QY8-A7-dmm"/>
-                            <constraint firstItem="gIO-RW-nEU" firstAttribute="centerX" secondItem="8aE-uP-1h5" secondAttribute="centerX" id="Zx0-d0-oO1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gIO-RW-nEU" secondAttribute="trailing" constant="50" id="jKt-FL-wmZ"/>
-                            <constraint firstItem="k24-70-uQ6" firstAttribute="centerX" secondItem="8aE-uP-1h5" secondAttribute="centerX" id="kz4-eB-gAR"/>
-                            <constraint firstItem="k24-70-uQ6" firstAttribute="top" secondItem="BKe-1A-rVk" secondAttribute="bottom" constant="20" id="sSh-vm-D5o"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PZK-zT-TjX">
                         <rightBarButtonItems>
@@ -137,6 +129,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lake.jpg" width="690" height="298"/>
+        <image name="square.png" width="260" height="260"/>
     </resources>
 </document>

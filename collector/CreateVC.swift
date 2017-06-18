@@ -19,8 +19,9 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let collection = Collection(context: context)
         collection.name = nameField.text
-        collection.picture = UIImagePNGRepresentation(imageView.image!)! as NSData
+        collection.picture = UIImageJPEGRepresentation(imageView.image!, 100)! as NSData
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
     }
     
     @IBOutlet weak var nameField: UITextField!
