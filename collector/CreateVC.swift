@@ -11,7 +11,8 @@ import UIKit
 class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBAction func cameraButton(_ sender: Any) {
-        print("cam")
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBOutlet weak var addUPDButton: UIButton!
