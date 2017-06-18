@@ -19,10 +19,15 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     @IBOutlet weak var delButton: UIButton!
     
     @IBAction func addButton(_ sender: Any) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let collection = Collection(context: context)
-        collection.name = nameField.text
-        collection.picture = UIImagePNGRepresentation(imageView.image!)! as NSData
+        if collection != nil {
+            collection!.name = nameField.text
+            collection!.picture = UIImagePNGRepresentation(imageView.image!)! as NSData
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let collection = Collection(context: context)
+            collection.name = nameField.text
+            collection.picture = UIImagePNGRepresentation(imageView.image!)! as NSData
+        }
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         navigationController!.popViewController(animated: true)
     }
@@ -61,6 +66,11 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     
     @IBAction func delButton(_ sender: Any) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        context.delete(collection!)
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        navigationController!.popViewController(animated: true)
+
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
