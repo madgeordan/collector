@@ -16,6 +16,8 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     @IBOutlet weak var addUPDButton: UIButton!
     
+    @IBOutlet weak var delButton: UIButton!
+    
     @IBAction func addButton(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let collection = Collection(context: context)
@@ -26,7 +28,6 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     @IBOutlet weak var nameField: UITextField!
-    
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -47,16 +48,21 @@ class CreateVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 }
             }
             nameField.text = collection?.name
-            addUPDButton.setTitle("rename", for: .normal)
+            addUPDButton.setTitle("update", for: .normal)
             addUPDButton.setTitleColor(UIColor.black, for: .normal)
         } else {
-            print("NO COLLECTION!")
+            delButton.isHidden = true
         }
     }
     @IBAction func photosButton(_ sender: Any) {
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func delButton(_ sender: Any) {
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageView.image = image

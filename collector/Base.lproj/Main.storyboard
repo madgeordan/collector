@@ -64,6 +64,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H9-cr-uxz">
+                                <rect key="frame" x="155" y="378" width="65" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="add"/>
+                                <connections>
+                                    <action selector="addButton:" destination="g74-YD-aqg" eventType="touchUpInside" id="pgg-6d-Qj9"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type the name of the thing you're going to add" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gIO-RW-nEU">
                                 <rect key="frame" x="65" y="340" width="245.5" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,12 +83,14 @@
                                 <rect key="frame" x="58" y="72" width="260" height="260"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6H9-cr-uxz">
-                                <rect key="frame" x="156" y="378" width="65" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbM-va-u3r">
+                                <rect key="frame" x="166" y="416" width="43" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="add"/>
+                                <state key="normal" title="delete">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="addButton:" destination="g74-YD-aqg" eventType="touchUpInside" id="pgg-6d-Qj9"/>
+                                    <action selector="delButton:" destination="g74-YD-aqg" eventType="touchUpInside" id="emf-R7-ePH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -102,6 +112,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addUPDButton" destination="6H9-cr-uxz" id="lkE-WC-jN3"/>
+                        <outlet property="delButton" destination="fbM-va-u3r" id="hYf-K5-kSR"/>
                         <outlet property="imageView" destination="k24-70-uQ6" id="PCA-I0-jLK"/>
                         <outlet property="nameField" destination="gIO-RW-nEU" id="JkZ-lG-IwW"/>
                     </connections>
